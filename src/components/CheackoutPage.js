@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         padding: '2rem',
-        paddingTop: '80px',
+        paddingTop: '110px',
         [theme.breakpoints.down('xs')]: {
-            paddingTop: '160px',
+            paddingTop: '200px',
             height: 'auto'
         },
     },
