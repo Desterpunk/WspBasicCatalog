@@ -11,7 +11,7 @@ import { Badge } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { auth } from '../environment/enviroment';
+
 import { setCurrentAccount } from '../thunkAction/userThunk';
 import { emptyBasketProduct } from '../thunkAction/basketProductsThunk';
 

@@ -4,7 +4,6 @@ import accounting from 'accounting';
 import { Button, Typography } from '@material-ui/core'
 import { connect } from 'react-redux';
 import { setBasketProductTotal } from '../thunkAction/basketProductsThunk';
-import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const Total = ({ products, basketProducts, total, user, dispatch }) => {
 
     const classes = useStyles();
-    const navigate = useNavigate();
 
     const handleAddButton = () => {
 
