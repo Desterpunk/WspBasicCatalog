@@ -40,12 +40,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CheckoutCard({ product: { id, name, productType, image, price, rating, description }, dispatch }) {
+function CheckoutCard({ product: { id, name, productType, image, price, rating, description, generatedId }, dispatch }) {
     const classes = useStyles();
 
     const handleDeleteButton = (e) => {
         e.preventDefault();
-        dispatch(deleteBasketProduct(id))
+        dispatch(deleteBasketProduct(generatedId))
     }
 
     return (

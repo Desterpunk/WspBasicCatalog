@@ -40,7 +40,7 @@ export const basketProductsReducer = createSlice({
         });
         builder.addCase(deleteBasketProduct.fulfilled, (state, action) => {
             state.loading = false;
-            state.products = state.products.filter((product) => product.id !== action.payload)
+            state.products = state.products.filter((product) => product.generatedId !== action.payload)
         })
         builder.addCase(setBasketProductTotal.fulfilled, (state) => {
             state.total = state.products.reduce((acumulator, actual) => acumulator + actual.price, 0);

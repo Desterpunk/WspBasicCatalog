@@ -54,9 +54,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Product({ product, dispatch }) {
+function Product({ product, dispatch,basketProducts }) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -64,7 +66,8 @@ function Product({ product, dispatch }) {
 
   const handleAddButton = (e) => {
     e.preventDefault();
-    dispatch(addBasketProduct(product));
+    const buyedProduct = {...product, generatedId: basketProducts.length}
+    dispatch(addBasketProduct(buyedProduct));
   }
 
   return (
@@ -141,6 +144,8 @@ const mapStateToProps = (state) => ({
   loading: state.productsReducer.loading,
   hasErrors: state.productsReducer.hasErrors,
   redirect: state.productsReducer.redirect,
+  basketProducts: state.basketProductsReducer.products,
+
 });
 
 export default connect(mapStateToProps)(Product);

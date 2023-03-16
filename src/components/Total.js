@@ -34,7 +34,6 @@ const Total = ({ products, basketProducts, total, user, dispatch }) => {
                 count[namesProducts[i]] = 1;
             }
         }
-        console.log(count)
         window.location = `https://api.whatsapp.com/send?phone=573137065856&text=¡Hola!, soy ${user.name} Estoy interesad@ en los siguientes productos ${JSON.stringify(count)}`
     }
 
