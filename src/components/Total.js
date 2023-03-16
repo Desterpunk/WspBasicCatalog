@@ -25,8 +25,17 @@ const Total = ({ products, basketProducts, total, user, dispatch }) => {
     const handleAddButton = () => {
 
         const namesProducts = products.map(product => product.name)
-        console.log(namesProducts)
-        window.location = `https://api.whatsapp.com/send?phone=573213391720&text=¡Hola!, soy ${user.name} Estoy interesad@ en los siguientes productos ${namesProducts}`
+        const count = {};
+
+        for (let i = 0; i < namesProducts.length; i++) {
+            if (count[namesProducts[i]]) {
+                count[namesProducts[i]]++;
+            } else {
+                count[namesProducts[i]] = 1;
+            }
+        }
+        console.log(count)
+        window.location = `https://api.whatsapp.com/send?phone=573137065856&text=¡Hola!, soy ${user.name} Estoy interesad@ en los siguientes productos ${JSON.stringify(count)}`
     }
 
     useEffect(() => {

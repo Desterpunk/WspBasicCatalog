@@ -30,10 +30,11 @@ export const basketProductsReducer = createSlice({
             }
             state.error = null;
             state.products = [...state.products];
-            let repetido = state.products.filter(product => product.id === action.payload.id);
-            if (repetido.length === 0) {
-                state.products = [...state.products, action.payload];
-            }
+            // let repetido = state.products.filter(product => product.id === action.payload.id);
+            // if (repetido.length === 0) {
+            //     state.products = [...state.products, action.payload];
+            // }
+            state.products = [...state.products, action.payload];
 
 
         });
