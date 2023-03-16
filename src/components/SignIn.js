@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingTop: '110px',
+    [theme.breakpoints.down('xs')]: {
+        paddingTop: '200px',
+        height: 'auto'
+    },
   },
   avatar: {
     margin: theme.spacing(1),
